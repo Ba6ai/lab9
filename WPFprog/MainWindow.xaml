@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
-    <StackPanel Margin="20">
+    <StackPanel Margin="5">
         <StackPanel Orientation="Horizontal">
 
             <StackPanel Margin="5">
@@ -61,6 +61,27 @@
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Информация о Y(вывод координаты Y) = " HorizontalAlignment="Left" Margin="5"/>
                 <TextBlock Name="InfoY" FontWeight="Bold" Margin="5"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Margin="5">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Margin="5">
+                    <TextBlock Text="Текущаяя координата Х"/>
+                    <TextBlock Name="txtX1a" HorizontalAlignment="Center" Width="100" Margin="5"/>
+                </StackPanel>
+
+                <StackPanel Margin="100, 5, 5, 5">
+                    <TextBlock Text="Что прибавить к координате?"/>
+                    <TextBox Name="txtForSum" HorizontalAlignment="Center" Width="100" Margin="5"/>
+                </StackPanel>
+            </StackPanel>
+
+            <Button Name="btnPlusAA" Content="Сложить координату и число пользователя" Click="btnPlusAA_Click" HorizontalAlignment="Left" Width="250" Margin="5"/>
+            
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Результат сложения = " HorizontalAlignment="Left" Margin="5"/>
+                <TextBlock Name="txtInfo" FontWeight="Bold" Margin="5"/>
             </StackPanel>
         </StackPanel>
 
