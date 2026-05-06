@@ -1,40 +1,80 @@
-﻿using System.Text;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using ex2;
 
 namespace WPFprog
-{
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    private void Button_Click(object  sender, RoutedEventArgs e)
-    {
-        string text = textBox1.Text;
-        if (text != " ")
-        {
-            MessageBox.Show(text);
-        }
-    }
-    private void textBox1_TExtChanged(object sender, TextChangedEventArgs e)
-    {
-        string text = textBox1.Text;
-        if (text != "no")
-        {
-            MessageBox.Show("Зачем ты так?)");
-        }
-    }
+{ 
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private void btnPlus_Click(object sender, RoutedEventArgs e)
         {
-            InitializeComponent();
+            double x = Enter(txtX1);
+            double y = Enter(txtY1);
+
+            ex2.Point p = new ex2.Point(x, y);
+            p++;
+            txtX1.Text = p.X.ToString();
+        }
+
+        private void btnMinus_Click(object sender, RoutedEventArgs e)
+        {
+            double x = 0;
+            double y = 0;
+            if (double.TryParse(txtX1.Text, out x) && double.TryParse(txtY1.Text, out y))
+            {
+                ex2.Point p = new ex2.Point(x, y);
+                p--;
+                txtX1.Text = p.X.ToString();
+            }
+            else
+            {
+                txtResult.Text = "Ошибка ввода: введите числа";
+            }
+        }
+        private void btnCalculate_Click(object sender, RoutedEventArgs e)
+        {
+            if (double.TryParse(txtX1.Text, out double x1) && 
+                double.TryParse(txtY1.Text, out double y1) &&
+                double.TryParse(txtX2.Text, out double x2) && 
+                double.TryParse(txtY2.Text,out double y2))
+            {
+                ex2.Point p1 = new ex2.Point(x1, y1);
+                ex2.Point p2 = new ex2.Point(x2, y2);
+
+                double dist = p1 + p2;
+
+                txtResult.Text = dist.ToString();
+            }
+            else
+            {
+                txtResult.Text = "Ошибка: заполните все поля";
+            }
+        }
+        private void btnInfo_Click(object sender, RoutedEventArgs e)
+        {
+            double x = Enter(txtX1);
+            double y = Enter(txtY1);
+
+            ex2.Point p = new ex2.Point(x, y);
+
+            int Xint = (int)p;
+            double Yd = p;
+
+            InfoX.Text = Xint.ToString();
+            InfoY.Text = Yd.ToString();
+        }
+        private double Enter(TextBox text)
+        {
+            double x = 0;
+            if (double.TryParse(text.Text, out x))
+            {
+                return x;
+            }
+            else
+            {
+                txtResult.Text = "Ошибка ввода: введите числа";
+                return -1;
+            }
         }
     }
 }

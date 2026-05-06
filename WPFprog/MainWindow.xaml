@@ -6,10 +6,63 @@
         xmlns:local="clr-namespace:WPFprog"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
 
-    </Grid>
+    <StackPanel Margin="20">
+        <StackPanel Orientation="Horizontal">
+
+            <StackPanel Margin="5">
+                <Label Content="Точка 1:" HorizontalAlignment="Center"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <StackPanel Margin="5">
+                        <TextBlock Text="Координата X" HorizontalAlignment="Center" FontSize="10"/>
+                        <TextBox Name="txtX1" Width="100" Margin="5"/>
+                        <Button Name="btnPlus" Content="X + 1 (++)" Click="btnPlus_Click" Width="100" HorizontalAlignment="Left" Margin="5"/>
+                        <Button Name="btnMinus" Content="X - 1 (--)" Click="btnMinus_Click" Width="100" HorizontalAlignment="Left" Margin="5"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <TextBlock Text="Координата У" HorizontalAlignment="Center" FontSize="10"/>
+                        <TextBox Name="txtY1" Width="100" Margin="5"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Margin="150, 5, 5, 5">
+                <Label Content="Точка 2:" HorizontalAlignment="Center"/>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <StackPanel Margin="5">
+                        <TextBlock Text="Координата Х" HorizontalAlignment="Center" FontSize="10"/>
+                        <TextBox Name="txtX2" Width="100" Margin="5"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <TextBlock Text="Координата У" HorizontalAlignment="Center" FontSize="10"/>
+                        <TextBox Name="txtY2" Width="100" Margin="5"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Margin="5">
+            <Button Name="btnCalculate" Content="Вычислить расстояние" Click="btnCalculate_Click" HorizontalAlignment="Left" Width="150" Margin="5"/>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Ответ = "/>
+                <TextBlock Name="txtResult" FontWeight="Bold" Margin="5"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Margin="5">
+            <Button Name="btnInfo" Content="Информация о точке" Click="btnInfo_Click" HorizontalAlignment="Left" Width="150" Margin="5"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Информация о Х(вывод целой части) = " HorizontalAlignment="Left" Margin="5"/>
+                <TextBlock Name="InfoX" FontWeight="Bold" Margin="5"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Информация о Y(вывод координаты Y) = " HorizontalAlignment="Left" Margin="5"/>
+                <TextBlock Name="InfoY" FontWeight="Bold" Margin="5"/>
+            </StackPanel>
+        </StackPanel>
+
+    </StackPanel>
 </Window>
