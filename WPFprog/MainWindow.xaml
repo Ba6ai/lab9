@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFprog"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="500" Width="800">
 
     <StackPanel Margin="5">
         <StackPanel Orientation="Horizontal">
@@ -45,7 +45,11 @@
         </StackPanel>
 
         <StackPanel Margin="5">
-            <Button Name="btnCalculate" Content="Вычислить расстояние" Click="btnCalculate_Click" HorizontalAlignment="Left" Width="150" Margin="5"/>
+            <StackPanel Orientation="Horizontal">
+                <Button Name="btnCalculate" Content="Вычислить расстояние" Click="btnCalculate_Click" HorizontalAlignment="Left" Width="150" Margin="5"/>
+                <Button Name="btnReset" Content="Сбросить значения всех полей" Click="btnReset_Click" HorizontalAlignment="Center" Width="200" Margin="5"/>
+            </StackPanel>
+            
             <StackPanel Orientation="Horizontal">
                 <Label Content="Ответ = "/>
                 <TextBlock Name="txtResult" FontWeight="Bold" Margin="5"/>
@@ -81,7 +85,7 @@
             
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Результат сложения = " HorizontalAlignment="Left" Margin="5"/>
-                <TextBlock Name="txtInfo" FontWeight="Bold" Margin="5"/>
+                <TextBlock Name="txtInfoSum" FontWeight="Bold" Margin="5"/>
             </StackPanel>
         </StackPanel>
 
